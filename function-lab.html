@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Lab</title>
+  </head>
+
+  <body>
+    <script>
+      // Task for you:
+      // 1- Ask (prompt) the user whether they want to convert kg to lb or lb to kg
+      //   they can:
+      //            > input 1 for kg to lb
+      //            > input 2 for lb to kg
+
+      var userChoice = prompt(`
+         Enter/type either 1 or 2:
+         1: to convert lb to kg
+         2: to convert kg to lb
+         `);
+
+      console.log(userChoice); // check the value
+      console.log(typeof userChoice); // the data type
+
+      /* 2- Ask (prompt) the user to input their value
+        (you can use do while to make sure the user input will be numeric)*/
+
+      let weight;
+      do {
+        weight = parseFloat(prompt("Enter your weight numeric value:"));
+        console.log(weight); // check the value of temp varaible
+      } while (isNaN(weight));
+
+      // Task 3: Switch statement with two cases:
+      /*
+    case 1: call our function to convert lb to kg
+    case 2: call our function to convert kg to lb
+    default: output a warning message
+*/
+      let result;
+      switch (userChoice) {
+        case "1":
+          alert("Your choice is 1");
+          result = convertLbToKg(weight);
+          document.write("<p> the kg weight is: " + result + "</p>");
+          break;
+        case "2":
+          alert("Your choice is 2");
+          result = convertKgToLb(weight);
+          document.write("<p> the lb weight is: " + result + "</p>");
+          break;
+        default:
+          document.write(
+            "<p style='color: yellow; background: red;'>Sorry, your choice was invalid! It has to be either 1 or 2</p>"
+          );
+      }
+
+      // creating two functions:
+      // 1. convert kg to lb => accepts a numric value in kg ==> returns the value in lb
+      // 2. convert lb to kg => accepts a numric value in lb ==> returns the value in kg
+      // 1. you can name the first function: convertKgToLb()
+      // 2. you can name the second function: convertLbToKg()
+      // You can call your functions inside document.write() or by assigning the value to variables
+
+      function convertLbToKg(lgWeight) {
+        let weightInKg = lgWeight * 0.45359237;
+        return weightInKg;
+      }
+
+      function convertKgToLb(kgWeight) {
+        let weightInLg = kgWeight / 0.45359237;
+        return weightInLg;
+      }
+    </script>
+  </body>
+</html>

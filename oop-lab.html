@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OOP Lab</title>
+  </head>
+
+  <body>
+    <script>
+      // Your Task (Mandatory Lab):
+      // Create a constructor named "Instructor"
+
+      // The properties:
+      // - the name of instructor: name
+      // - the campus name: campus
+      // - the program name: program
+      // - the hire date: hireDate
+
+      function Instructor(name, campus, program, hireDate) {
+        this.name = name;
+        this.campus = campus;
+        this.program = program;
+        this.hireDate = hireDate;
+
+        //     A method to return: instInfo()
+        // - just return one string: the Instructor name, campus name, program name
+
+        this.instInfo = function () {
+          return (
+            "Instructor Name: " +
+            this.name +
+            "Campus Location: " +
+            this.campus +
+            "Program Name: " +
+            this.program
+          );
+        };
+      }
+
+      // Then create a couple of instructors (instances of the constructor)
+      let Instructor1 = new Instructor(
+        "George MacDonald",
+        "Toronto",
+        "Cooking 101",
+        "April 4th 2021"
+      );
+      let Instructor2 = new Instructor(
+        "Sarah Dundst",
+        "Edmonton",
+        "Biking 101",
+        "April 5th 2021"
+      );
+      document.write(Instructor1.instInfo() + "<br>");
+      document.write(Instructor2.instInfo());
+    </script>
+  </body>
+</html>
